@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/vitafomin/challenge-10-svg-logo-maker/issues"
   },
-  "homepage": "https://github.com/vitafomin/challenge-10-svg-logo-maker#readme"
+  "homepage": "https://github.com/vitafomin/challenge-10-svg-logo-maker#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
 }
