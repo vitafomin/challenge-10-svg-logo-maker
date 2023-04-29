@@ -1,7 +1,9 @@
+// Imported and required all the packages that will be used 
 const inquirer = require("inquirer");
 const { Shapes, Circle, Square, Triangle } = require("./lib/shapes.js");
 const { writeFile } = require("fs/promises");
 
+// Inquirer questions used to get answers from the user in the terminal command line
 const logoInput = () => {
   return inquirer.prompt([
     {
@@ -35,6 +37,7 @@ const logoInput = () => {
       }
     },
   ])
+  // Use the users answers to then create a logo based on what they answered
   .then((answers) => {
     console.log(answers)
 
@@ -60,6 +63,7 @@ const logoInput = () => {
   })
 };
 
+// These are the functions for each shape, depending on what the user answered. each function includes the render method.
 const createCircle = (data) => {
   const newCircleObj = new Circle(data.color, data.textColor, data.text);
   const circleSVG = newCircleObj.render();
@@ -79,5 +83,5 @@ const createTriangle = (data) => {
 };
 
 
-
+// Calls the function to go off
 logoInput()
