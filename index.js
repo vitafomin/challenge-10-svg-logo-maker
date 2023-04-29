@@ -1,6 +1,5 @@
 const inquirer = require("inquirer");
-const Shapes = require("./lib/shapes.js");
-// const fs = require("fs/promises");
+const { Shapes, Circle, Square, Triangle } = require("./lib/shapes.js");
 const { writeFile } = require("fs/promises");
 
 const logoInput = () => {
@@ -37,50 +36,48 @@ const logoInput = () => {
     },
   ])
   .then((answers) => {
-    // console.log(answers)
-    // render({shape, text, color, textColor})
-    const logoData = logoInput(answers);
-    console.log(logoData)
+    console.log(answers)
+
+   if(answers.shape === "circle") {
+    const circleLogo = new Circle(answers.color, answers.textColor, answers.text);
+
+    createCircle(answers)
+   };
+
+   if(answers.shape === "square") {
+    const squareLogo = new Square(answers.color, answers.textColor, answers.text);
+
+    createSquare(answers)
+   };
+
+   if(answers.shape === "triangle") {
+    const triangleLogo = new Triangle(answers.color, answers.textColor, answers.text);
+
+    createTriangle(answers)
+   }
+   console.log("Successfully created logo.svg")
     
-    const logoShape = new Shapes(
-      logoData.shape,
-      logoData.color,
-      logoData.textColor,
-      logoData.text
-    );
-    const logo = logoShape.render();
-    
-    return writeFile("./examples/logo.svg", logo);
-  })
-  .then(() => {
-    return
-    console.log("Successfully created logo.svg")
   })
 };
-//  => {
-//   logoInput()
-//   .then((answers) => {
+
+const createCircle = (data) => {
+  const newCircleObj = new Circle(data.color, data.textColor, data.text);
+  const circleSVG = newCircleObj.render();
+  writeFile("./examples/logo.svg", circleSVG);
+};
+
+const createSquare = (data) => {
+  const newSquareObj = new Square(data.color, data.textColor, data.text);
+  const squareSVG = newSquareObj.render();
+  writeFile("./examples/logo.svg", squareSVG);
+};
+
+const createTriangle = (data) => {
+  const newTriangleObj = new Triangle(data.color, data.textColor, data.text);
+  const triangleSVG = newTriangleObj.render();
+  writeFile("./examples/logo.svg", triangleSVG);
+};
 
 
-//   })
-  
-// }
-
-
-//   .then((answers) => {
-//     console.log(answers);
-//     fs.writeFile("logo.svg", logoInput(answers), (err) =>
-//       err ? console.log(err) : console.log("Logo successfully created!")
-//     );
-// });
-
-// const createLogo = () => {
-//   logoInput().then((answers) => {
-//     console.log(answers);
-//     fs.writeFile("logo.svg", logo(answers), (err) =>
-//       err ? console.log(err) : console.log("Logo successfully created!")
-//     );
-//   });
-// };
 
 logoInput()
