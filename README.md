@@ -14,9 +14,10 @@ Node.js and inquirer needs to be installed to allow this application to work. To
 ## Usage
 
 This application is a great tool for a developer to generate a personally logo for any project that they work on. This is a great tool to save money so you do not have to got to a graphic designer. You can simply generate a logo with this application and use it for any of your projects. 
-*![circle-logo-screenshots](./examples/circleLogo.png)
-*![square-logo-screenshots](./examples/squareLogo.png)
-*![triangle-logo-screenshots](./examples/triangleLogo.png)
+
+* ![circle-logo-screenshots](./examples/circleLogo.png)
+* ![square-logo-screenshots](./examples/squareLogo.png)
+* ![triangle-logo-screenshots](./examples/triangleLogo.png)
 
 
 
