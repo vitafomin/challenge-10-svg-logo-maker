@@ -18,6 +18,7 @@ This application is a great tool for a developer to generate a personally logo f
 * ![circle-logo-screenshots](./examples/circleLogo.png)
 * ![square-logo-screenshots](./examples/squareLogo.png)
 * ![triangle-logo-screenshots](./examples/triangleLogo.png)
+(https://watch.screencastify.com/v/f70ZLJ0pOvROu0IyWa5q)
 
 
 
